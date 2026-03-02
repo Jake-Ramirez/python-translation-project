@@ -64,18 +64,10 @@ def get_all_translations(rna_sequence, genetic_code):
     pass
 
 def get_reverse(sequence):
-    """Reverse orientation of `sequence`.
-
-    Returns a string with `sequence` in the reverse order.
-
-    If `sequence` is empty, an empty string is returned.
-
-    Examples
-    --------
-    >>> get_reverse('AUGC')
-    'CGUA'
-    """
-    pass
+    listed_seq = list(sequence)
+    listed_seq.reverse()
+    reversed_seq = "".join(listed_seq)
+    print(reversed_seq)
 
 def get_complement(sequence):
     """Get the complement of a `sequence` of nucleotides.
