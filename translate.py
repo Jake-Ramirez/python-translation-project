@@ -64,7 +64,7 @@ def get_all_translations(rna_sequence, genetic_code):
     pass
 
 def get_reverse(sequence):
-    listed_seq = list(sequence)
+    listed_seq = list(sequence.upper())
     listed_seq.reverse()
     reversed_seq = "".join(listed_seq)
     return reversed_seq
