@@ -89,7 +89,7 @@ def get_complement(sequence):
         listed_seq = list(sequence.upper())
         for base in listed_seq:
             complement_seq.append(complement[base])
-        final_seq = "".join(listed_seq)
+        final_seq = "".join(complment_seq)
     return final_seq
 
 def reverse_and_complement(sequence):
