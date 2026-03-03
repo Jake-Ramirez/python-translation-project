@@ -83,7 +83,7 @@ def get_complement(sequence):
     """
     complement = {"A": "U", "U": "A", "G": "C", "C": "G"}
     if sequence == "":
-        return print("missing input sequence")
+        return sequence
     else:
         complement_seq = []
         listed_seq = list(sequence.upper())
