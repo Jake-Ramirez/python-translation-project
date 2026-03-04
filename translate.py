@@ -113,10 +113,9 @@ def reverse_and_complement(sequence):
         listed_seq = list(sequence.upper())
         for base in listed_seq:
             complement_seq.append(complement[base])
+        complement_seq.reverse()
         final_seq = "".join(complement_seq)
-        finas_seq.reverse()
     return final_seq
-    
 
 def get_longest_peptide(rna_sequence, genetic_code):
     """Get the longest peptide encoded by an RNA sequence.
