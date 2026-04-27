@@ -4,7 +4,8 @@ import sys
 
 from find_orf.py import find_first_orf
 from translate.py import translate_sequence
-from find_orf.py import parse_sequence_from_path 
+from find_orf.py import parse_sequence_from_path
+ 
 def main():
     import argparse
 
@@ -57,11 +58,32 @@ def main():
         args.start_codon = default_start_codons
     if not args.stop_codon:
         args.stop_codon = default_stop_codons
+    
+     genetic_code = {'GUC': 'V', 'ACC': 'T', 'GUA': 'V', 'GUG': 'V', 'ACU': 'T', 'AAC': 'N', 'CCU': 'P', 'UGG': 'W', 'AGC': 'S', 'AUC': 'I>
+    rna_seq = ("AUG"
+            "UAC"
+            "UGG"
+            "CAC"
+            "GCU"
+            "ACU"
+            "GCU"
+            "CCA"
+            "UAU"
+            "ACU"
+            "CAC"
+            "CAG"
+            "AAU"
+            "AUC"
+            "AGU"
+            "ACA"
+            "GCG")
 
     orf = find_first_orf(sequence = sequence,
             start_codons = args.start_codon,
             stop_codons = args.stop_codon)
-    sys.stdout.write('{}\n'.format(orf))
+
+    translated_orf = translate_sequence(rna_sequence = orf, genetic_code = genetic_code)
+    sys.stdout.write('{}\n'.format(translated_orf))
 
 if __name__ == '__main__':
     main()
