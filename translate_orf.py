@@ -59,7 +59,7 @@ def main():
     if not args.stop_codon:
         args.stop_codon = default_stop_codons
     
-if __name__ == '__main__':
+
     genetic_code = {'GUC': 'V', 'ACC': 'T', 'GUA': 'V', 'GUG': 'V', 'ACU': 'T', 'AAC': 'N', 'CCU': 'P', 'UGG': 'W', 'AGC': 'S',
  'AUC': 'I', 'CAU': 'H', 'AAU': 'N', 'AGU': 'S', 'GUU': 'V', 'CAC': 'H', 'ACG': 'T', 'CCG': 'P', 'CCA': 'P', 'ACA': 'T', 'CCC': 'P',
  'UGU': 'C', 'GGU': 'G', 'UCU': 'S', 'GCG': 'A', 'UGC': 'C', 'CAG': 'Q', 'GAU': 'D', 'UAU': 'Y', 'CGG': 'R', 'UCG': 'S', 'AGG': 'R',
@@ -85,7 +85,7 @@ if __name__ == '__main__':
             "ACA"
             "GCG")
     
-    main()
+    
     
     orf = find_first_orf(sequence = sequence,
             start_codons = args.start_codon,
@@ -94,4 +94,5 @@ if __name__ == '__main__':
     translated_orf = translate_sequence(rna_sequence = orf, genetic_code = genetic_code)
     sys.stdout.write('{}\n'.format(translated_orf))
 
-
+if __name__ == '__main__':
+    main()
